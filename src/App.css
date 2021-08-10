@@ -36,3 +36,75 @@
     transform: rotate(360deg);
   }
 }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(84, 155, 149, 0.562);
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+
+.square {
+  background: rgb(106, 231, 194);
+  border: none ;
+  border-radius: 5px;
+  float: left;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: sans-serif;
+  line-height: 34px;
+  height: 50px;
+  margin: 1.5px;
+  padding: 0;
+  text-align: center;
+  width: 50px;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.game-board {
+  margin: 20px
+}
+
+.game-info {
+  margin-left: 20px;
+}
+
+.step_red {
+  background: rgb(255, 78, 78);
+}
+
+.step_blue {
+  background: rgb(241, 175, 50);
+}
+.step_start {
+  background: rgb(106, 231, 194);
+}
+
+.buttons {
+  height: 30px;
+  border-radius: 5px;
+  border: none
+}
+
+li {
+  margin-bottom: 5px;
+}
