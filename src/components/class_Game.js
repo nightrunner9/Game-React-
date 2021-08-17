@@ -16,7 +16,7 @@ class Game extends React.Component {
     };
   }
 
-  handleClick(i) {
+  handleClick (i)  {
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history [history.length - 1];
     const squares = current.squares.slice();
@@ -44,7 +44,8 @@ class Game extends React.Component {
     const {history: historyName, defaultClassName, stepNumber, xIsNext} = this.state
     const colorChange = defaultClassName
     const history = historyName;
-    const current = history [stepNumber];
+    const current = history[stepNumber];
+    console.log(current)
     const winner = calculateWinner(current.squares);
 
     const moves = history.map((step, move) => {
@@ -75,7 +76,7 @@ class Game extends React.Component {
         <div className="game-board">
           <Board
             squares={current.squares}
-            onClick={(i)=> this.handleClick(i)}
+            handleClick={(i)=> this.handleClick(i)}
           />
         </div>
         <div className="game-info">

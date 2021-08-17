@@ -2,12 +2,18 @@ import React from 'react';
 
 
 function Square (props)  {
+  const {squares, index} = props
+  const square = squares[index];
+  const classSquare = square === 'X' ? 'step_red' : square === 'O' ? 'step_blue' : '';
+  console.log(square);
+  console.log(classSquare);
+  console.log(props)
     return (
       <button
-        className={`square ${props.classSquare}`}
-        onClick={props.onClick}
+        className={`square ${classSquare}`}
+        onClick={() => props.handleClick(index)}
       >
-        {props.value}
+        {square}
       </button>
     );
 }

@@ -1,35 +1,25 @@
 import React from 'react';
 import Square from './function_square';
-
+import Game from './class_Game'
 
 function Board (props) {
-    const renderSquare = (i) => {
-      const square = props.squares[i];
-      const classSquare = square === 'X' ? 'step_red' : square === 'O' ? 'step_blue' : '';
-      return (
-      <Square
-        classSquare = {classSquare}
-        value={square}
-        onClick={()=> props.onClick(i)}
-      />)
-    }
     const render = () => {
-      return (
+    return (
         <div>
           <div className="board-row">
-            {renderSquare(0)}
-            {renderSquare(1)}
-            {renderSquare(2)}
+            <Square index={0} squares={props.squares} handleClick={(index) => props.handleClick(index)} />
+            <Square index={1} squares={props.squares} handleClick={(index) => props.handleClick(index)} />
+            <Square index={2} squares={props.squares} handleClick={(index) => props.handleClick(index)} />
           </div>
           <div className="board-row">
-            {renderSquare(3)}
-            {renderSquare(4)}
-            {renderSquare(5)}
+            <Square index={3} squares={props.squares} handleClick={(index) => props.handleClick(index)} />
+            <Square index={4} squares={props.squares} handleClick={(index) => props.handleClick(index)} />
+            <Square index={5} squares={props.squares} handleClick={(index) => props.handleClick(index)} />
           </div>
           <div className="board-row">
-            {renderSquare(6)}
-            {renderSquare(7)}
-            {renderSquare(8)}
+            <Square index={6} squares={props.squares} handleClick={(index) => props.handleClick(index)} />
+            <Square index={7} squares={props.squares} handleClick={(index) => props.handleClick(index)} />
+            <Square index={8} squares={props.squares} handleClick={(index) => props.handleClick(index)} />
           </div>
         </div>
       )
