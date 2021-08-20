@@ -1,9 +1,7 @@
 import React from 'react';
 import Square from './function_square';
-import Game from './class_Game'
 
 function Board (props) {
-    const render = () => {
     return (
         <div>
           <div className="board-row">
@@ -24,10 +22,5 @@ function Board (props) {
         </div>
       )
     }
-  return (
-    {render}
-    )
 
-  }
-
-  export default Board
+  export default Board;
