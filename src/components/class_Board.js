@@ -23,5 +23,4 @@ function Board (props) {
       )
     }
 
-    Board = React.memo(Board)
-  export default  Board;
+  export default Board;
