@@ -1,27 +1,23 @@
 import React from 'react';
 import Square from './function_square';
 
-function Board (props) {
-    return (
+
+const Board = (props) => (
         <div>
-          <div className="board-row">
-            <Square index={0} squares={props.squares} handleClick={(index) => props.handleClick(index)} />
-            <Square index={1} squares={props.squares} handleClick={(index) => props.handleClick(index)} />
-            <Square index={2} squares={props.squares} handleClick={(index) => props.handleClick(index)} />
-          </div>
-          <div className="board-row">
-            <Square index={3} squares={props.squares} handleClick={(index) => props.handleClick(index)} />
-            <Square index={4} squares={props.squares} handleClick={(index) => props.handleClick(index)} />
-            <Square index={5} squares={props.squares} handleClick={(index) => props.handleClick(index)} />
-          </div>
-          <div className="board-row">
-            <Square index={6} squares={props.squares} handleClick={(index) => props.handleClick(index)} />
-            <Square index={7} squares={props.squares} handleClick={(index) => props.handleClick(index)} />
-            <Square index={8} squares={props.squares} handleClick={(index) => props.handleClick(index)} />
-          </div>
+          {arr.map((item,index) => (
+            <div className="board-row" key={index}>
+                <Square index={item[0]} squares={props.squares} handleClick={(index) => props.handleClick(index)} />
+                <Square index={item[1]} squares={props.squares} handleClick={(index) => props.handleClick(index)} />
+                <Square index={item[2]} squares={props.squares} handleClick={(index) => props.handleClick(index)} />
+            </div>
+          ))}
+
         </div>
       )
-    }
-
-    Board = React.memo(Board)
-  export default  Board;
+const arr = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8]
+]
+console.log(arr)
+  export default React.memo(Board);
